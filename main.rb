@@ -4,7 +4,7 @@ class Affine < Sinatra::Base
   MULTIPLICATION_VALUES = [3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
   ALPHABET = (?A..?Z).to_a
   dictionary = {}
-  File.open("../enable1.txt", "r") do |file|
+  File.open("enable1.txt", "r") do |file|
     file.each_line do |line|
       dictionary[line.chomp] = 1
     end
@@ -35,7 +35,7 @@ class Affine < Sinatra::Base
     score /= words.length
     score
   end
-  
+
   helpers do
     def h(text)
       Rack::Utils.escape_html(text)
